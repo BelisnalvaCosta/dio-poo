@@ -1,5 +1,5 @@
 package br.com.dio.desafio.dominio;
 
-public class calcularXp {
-
+public interface calcularXp {
+    void calcularXp(double somarXp);
 }

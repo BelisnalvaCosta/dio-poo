@@ -1,44 +1,37 @@
 package br.com.dio.desafio.dominio;
 
-public class Mentoria {
-    private String titulo;
-    private String descricao;
-    private localDate data;
+import java.time.LocalDateTime;
+
+public class Mentoria extends Conteudo implements calcularXp {
+
+    private LocalDateTime data;
 
     public Mentoria() {
     }
 
-    public String getTitulo() {
-        return titulo;
+    public double caluclarXp() {
+        return XP_PADRAO + 20d;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public localDate getData() {
+    public LocalDateTime getData(Object now) {
         return data;
     }
 
-    public void setData(localDate data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
     @Override
     public String toString() {
         return "Mentoria{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
                 ", data=" + data +
                 '}';
     }
-}
 
+    @Override
+    public void calcularXp(double multiplicarXp) {
+
+    }
+}
